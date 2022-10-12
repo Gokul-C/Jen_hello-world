@@ -17,7 +17,7 @@ pipeline{
         stage ("deploy code to tomcat server"){
             steps{
                 sshagent(['tomcat-ssh']) {
-                    sh "ssh -o StrictHostKeyChecking=no scp /var/lib/jenkins/workspace/maven/webapp/target/webapp.war ec2-user@65.1.95.114:/usr/share/tomcat/webapps"
+                    sh "scp ssh -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/maven/webapp/target/webapp.war ec2-user@65.1.95.114:/usr/share/tomcat/webapps"
 
 
 
