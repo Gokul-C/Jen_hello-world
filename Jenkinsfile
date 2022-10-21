@@ -14,6 +14,7 @@ pipeline{
         stage ("build code"){
             steps{
                 sh "mvn clean install"
+                sh "cp /home/ansadmin/workspace/Deploytocontainer/webapp/target/*.war  /opt/docker"
             }
         }
         
