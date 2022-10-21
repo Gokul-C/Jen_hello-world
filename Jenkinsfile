@@ -1,6 +1,6 @@
 pipeline{
     agent {
-        label "my-slave"
+        label "ansible-server"
     }
     environment {
         PATH = "/opt/maven/bin:$PATH"
