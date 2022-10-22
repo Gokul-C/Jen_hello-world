@@ -22,6 +22,13 @@ pipeline{
             steps{
                 sh  "cp /home/ansadmin/workspace/Deploytocontainer/webapp/target/*.war  /opt/docker"
             }
+        }
+
+        stage ("build , tag and push image to dockerhub"){
+            steps{
+                sh "cd /opt/docker"
+                sh "ansible-playbook -i hosts playbook.yml"
+            }
         }    
 
             
