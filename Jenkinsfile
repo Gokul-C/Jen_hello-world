@@ -27,7 +27,7 @@ pipeline{
         stage ("build , tag and push image to dockerhub"){
             steps{
                 sh "cd /opt/docker"
-                sh "ansible-playbook -i hosts playbook.yml"
+                sh "ansible-playbook -i hosts /opt/docker/playbook.yml"
             }
         }    
 
