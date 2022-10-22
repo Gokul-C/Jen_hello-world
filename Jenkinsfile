@@ -29,6 +29,18 @@ pipeline{
                 sh "cd /opt/docker"
                 sh "ansible-playbook -i hosts /opt/docker/playbook.yml"
             }
+        }
+
+        stage ("wait for 10s"){
+            steps{
+                sh "sleep 10"
+            }
+        }
+
+        stage ("deploy container to the server"){
+            steps{
+                sh "ansible-playbook -i /opt/docker/hosts /opt/docker/deploy.yaml"
+            }
         }    
 
             
