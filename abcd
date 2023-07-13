@@ -1,0 +1,12 @@
+pipeline {
+    agent any
+    stages {
+        stage('git clone') {
+            steps {
+              sh 'echo cloning git repo from github'
+              git changelog: false, poll: false, url: 'https://github.com/Gokul-C/Jen_hello-world.git'
+            }
+        }
+        
+    }
+}
